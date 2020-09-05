@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server",
+    "build": "webpack --colors"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-syntax-class-properties": "^7.10.4",
@@ -12,6 +17,7 @@
     "babel-loader": "^8.1.0",
     "html-webpack-plugin": "^4.4.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

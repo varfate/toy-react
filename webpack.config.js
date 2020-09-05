@@ -1,10 +1,12 @@
-const  HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
     main: './main.js',
   },
   mode: 'development',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -15,10 +17,16 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    hot: true,
+    port: 9000,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
       hash: true,
-    })
-  ]
+    }),
+  ],
 };
